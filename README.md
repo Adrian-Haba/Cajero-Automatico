@@ -29,7 +29,9 @@ Con respecto a la primera ventana, el logo en grande de la aplicación.
   2- Retirada de dinero
   3. Ver los últimos movimientos
   4- Salida de la cuenta actual
- Quinto: En las ventanas de introducir/retirar dinero, podemos hacer la acción de introducir dinero en una ventana y retirar dinero
+  
+ *Quinto: En las ventanas de introducir/retirar dinero, podemos hacer la acción de introducir dinero en una ventana y retirar dinero
   en la otra.
- Sexta: La última ventana es una tabla en la que se muestran los movimientos de esa cuenta
+  
+ *Sexta: La última ventana es una tabla en la que se muestran los movimientos de esa cuenta
     
