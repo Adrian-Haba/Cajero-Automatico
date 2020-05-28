@@ -22,41 +22,26 @@ public class accounts {
 		}
 	}
 
-	// SELECT CUENTAS
-	/*
-	 * public void checkcuentas(String nombrecuenta) { boolean check = new
-	 * modelo.Accounts().checkcuentas(nombrecuenta);
-	 * 
-	 * if(check) { JOptionPane.showMessageDialog(null, "Usuario correcto"); new
-	 * vistas.elegircuenta().setVisible(true); }else { // Sino error
-	 * JOptionPane.showMessageDialog(null, "Usuario no encontrado"); }
-	 * 
-	 * }
-	 */
-
-	// Ingreso de dinero: recoger el saldo de la bbdd, recoger el dinero ingresado, sumarlo y actualizarlo en la bbdd
-	public double ingresardinero(double saldo) throws SQLException {
-
-		double saldoupdate = 0;
-
-		saldoupdate = saldo + saldo;
-		new modelo.Accounts().updatecuenta(saldoupdate);
-		JOptionPane.showMessageDialog(null, "Dinero ingresado");
-
-		return saldo;
+	// Ingreso de dinero: recoger el saldo de la bbdd, recoger el dinero ingresado,
+	// sumarlo y actualizarlo en la bbdd
+	public double ingresardinero(double ingresodinero) throws SQLException {
+		boolean addmoney = new modelo.Accounts().updatesaldoingresado(ingresodinero);
+		if (addmoney) {
+			JOptionPane.showMessageDialog(null, "Dinero ingresado");
+			JOptionPane.showMessageDialog(null, "Se le va a mostrar su recibo por pantalla");
+		}
+		return ingresodinero;
 	}
 
-	// Retirada de dinero: recoger el saldo de la bbdd, recoger el dinero indicado a retirar, restarlo y actualizarlo en la bbdd
-	public double retirardinero(double saldo) throws SQLException {
-
-		double saldoupdate = 0;
-
-		saldoupdate = saldo - saldo;
-
-		new modelo.Accounts().updatecuenta(saldoupdate);
-		JOptionPane.showMessageDialog(null, "Dinero retirado");
-
-		return saldo;
+	// Retirada de dinero: recoger el saldo de la bbdd, recoger el dinero indicado a
+	// retirar, restarlo y actualizarlo en la bbdd
+	public double retirardinero(double retiradadinero) throws SQLException {
+		boolean removemoney = new modelo.Accounts().updatesaldoretirado(retiradadinero);
+		if (removemoney) {
+			JOptionPane.showMessageDialog(null, "Dinero retirado");
+			JOptionPane.showMessageDialog(null, "Se le va a mostrar su recibo por pantalla");
+		}
+		return retiradadinero;
 	}
 
 }

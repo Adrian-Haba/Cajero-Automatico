@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -91,10 +92,11 @@ public class Reti_importe extends JFrame {
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String retirar = txtRetirar.getText();
-				double saldo = Double.parseDouble(retirar);
+				double retiradadinero = Double.parseDouble(retirar);
 				try {
-					new controlador.accounts().retirardinero(saldo);
-				} catch (SQLException e1) {
+					new controlador.accounts().retirardinero(retiradadinero);
+					new Fichero.Fichero_Recibo_Retirada(retiradadinero);
+				} catch (SQLException | IOException e1) {
 					e1.printStackTrace();
 				}
 				dispose();

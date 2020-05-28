@@ -1,24 +1,20 @@
 package vistas;
 
-import java.awt.EventQueue;
-
+//import java.io.File;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
-import javax.swing.JPasswordField;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.DropMode;
 
 public class Intro_importe extends JFrame {
 
@@ -97,10 +93,11 @@ public class Intro_importe extends JFrame {
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String ingreso = txtimporte.getText();
-				double saldo = Double.parseDouble(ingreso);
+				double ingresodinero = Double.parseDouble(ingreso);
 				try {
-					new controlador.accounts().ingresardinero(saldo);
-				} catch (SQLException e1) {
+					new controlador.accounts().ingresardinero(ingresodinero);
+					new Fichero.Fichero_Recibo_Ingreso(ingresodinero);
+				} catch (SQLException | IOException e1) {
 					e1.printStackTrace();
 				}
 				dispose();
