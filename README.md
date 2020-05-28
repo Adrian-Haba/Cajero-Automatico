@@ -34,4 +34,11 @@ Con respecto a la primera ventana, el logo en grande de la aplicación.
   en la otra.
   
  *Sexta: La última ventana es una tabla en la que se muestran los movimientos de esa cuenta
+ 
+ 
+ 
+ CAMBIOS REALIZADOS:
+                  1- Implementación de ficheros de forma que: al ingresar o retirar dinero se escribirá y se mostrará por pantalla un                        archivo que indica la cantidad ingresada/retirada con fecha y hora actual actual a la que se realizó la acción
+                  2- Implementación mediante una subconsulta la acción de al ingresar, que sume el importe a ingresar con el saldo                            actual de la cuenta y se actualice, y al retirar del mismo modo, pero resta el saldo de la cuenta
+ 
     
